@@ -1,5 +1,6 @@
 # test.py
 import kamingoml as kml
 
-temp = "rajvendra"
-kml.save(temp)
+temp = "myfile.txt"
+data = "test"
+kml.savefile(temp , data)
