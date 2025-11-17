@@ -94,6 +94,40 @@ def savefile(filename, data):
 
     print(f"Saved file: {output_folder}/{filename}")
 
+
+
+
+
+
+def list_files(folder_path):
+    files = []
+    try:
+        # Get all items inside the folder
+        items = os.listdir(folder_path)
+
+        # print(f"Files in '{folder_path}':\n")
+
+        for item in items:
+            full_path = os.path.join(folder_path, item)
+
+            # Check if it's a file
+            if os.path.isfile(full_path):
+                files.append(item)
+                # print(f" - {item}")
+        return files
+    except FileNotFoundError:
+        print("❌ Folder not found. Please check the path.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+# # ===== RUN =====
+# folder = r"./your_folder_here"  # <-- change this to your folder
+# list_files_with_extensions(folder)
+
+
+
+
+
 if __name__ == "__main__":
     runfile("config.json")
     
